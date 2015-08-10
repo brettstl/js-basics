@@ -1,0 +1,20 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+function reverseString(str) {
+	var newWord = str.split(" ");
+	for (i = 0; i < str.length; i++) {
+		var k = (str.length - (i + 1));
+		newWord[i] = str[k];
+  	}
+  	var reverseWord = newWord.join("");
+  	str = reverseWord;
+  	console.log(str);
+  	return str;
+}
+
+reverseString('This racecar is a racecar');
+</script>
+</body>
+</html>
