@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+
+//reverse a string
+function findLongestWord(str) {
+  var newArray = [];
+  newArray = str.split(" ");
+  var myLongestWord = newArray[0];
+  for (i = 1; i < newArray.length; i++) {
+    	if (newArray[i].length > myLongestWord.length) {
+  		myLongestWord = newArray[i];
+  	}
+  }
+  //give length of the longest word
+  //console.log(myLongestWord.length);
+  return myLongestWord.length;
+}
+
+findLongestWord('The quick brown fox jumped over the lazy dog');
+</script>
+</body>
+</html>
