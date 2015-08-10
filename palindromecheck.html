@@ -1,0 +1,47 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<script type="text/javascript">
+
+//reverse a string
+function reverseString(str) {
+	var newWord = str.split(" ");
+	for (i = 0; i < str.length; i++) {
+		var k = (str.length - (i + 1));
+		newWord[i] = str[k];
+  	}
+  	var reverseWord = newWord.join("");
+  	str = reverseWord;
+  	return str;
+}
+
+// boolean if string is a palindrome
+function palindrome(str) {
+	var simpleStr = str.toLowerCase();
+	var textOnly = [];
+	var isText = /\w/i;
+	for (i = 0; i < simpleStr.length; i++) {
+		if (isText.test(simpleStr[i])) {
+					textOnly.push(simpleStr[i])
+		}
+	}
+  	textOnly = textOnly.join("");
+  	var textReverse = reverseString(textOnly);
+	if (textOnly === textReverse){
+		console.log("true");
+		return true;
+	}
+	else {
+		console.log("false");
+		return false;
+
+	}
+}
+
+palindrome("racecar");
+</script>
+</body>
+</html>
