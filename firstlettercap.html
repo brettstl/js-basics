@@ -1,0 +1,42 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+// create a new variable for the new string. loop through all characters. Determine if the character is a word character. (If not just add to new string) Determine if the character is the first letter of a word. If the first letter, make it capital. If not the first letter, make it lowercase, and save to new string).
+
+function titleCase(str) {
+	var firstLetter = str[0].toUpperCase();
+	var newStr = firstLetter;
+	var aWordChar = /\w/i;
+	var nonWord = /\s/i; //just spaces! Ignores all other non-letters
+	var captLetter = /[A-Z]/i;
+	var lowCase = /[a-z]/i;
+	for (i = 1; i < str.length; i++) {
+		if (aWordChar.test(str[i])) {
+			if (nonWord.test(str[(i - 1)])) {
+				// make uppercase and save to new string
+				var k = str[i].toUpperCase();
+				newStr = newStr.concat(k);
+			}
+			else {
+				var k = str[i].toLowerCase();
+				//make sure letter is lowercase and save to new string
+				newStr = newStr.concat(k);
+			}
+		}
+		else {
+				//save non-character to string
+				newStr = newStr.concat(str[i]);
+		}
+	}
+	//console.log(newStr);
+	str = newStr;
+	return str;
+}
+
+titleCase("I'm a little tea pot");
+
+
+</script>
+</body>
+</html>
