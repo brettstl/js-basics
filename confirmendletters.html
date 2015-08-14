@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+
+
+// find out of the str ends with the same character as the target.
+function end(str, target) {
+	var extract = target.length; // the number of characters
+	var strLen = (str.length) - extract;
+	var lastLetter = str.substring(strLen);
+	console.log(lastLetter);
+	if (target === lastLetter) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+end('Bastian', 'an');
+
+
+</script>
+</body>
+</html>
