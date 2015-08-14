@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+
+// repeat a string. return an empty string if the num is negative.
+function repeat(str, num) {
+  // repeat after me
+  var allStr = "";
+  if (str.length < 0) {
+  	str = allStr;
+  }
+  else {
+  	for (i = 0; i < num; i++) {
+  		allStr = allStr + str;
+  	}
+  	str = allStr;
+  }
+  console.log(str);
+  return str;
+}
+
+repeat('abc', -3);
+
+</script>
+</body>
+</html>
