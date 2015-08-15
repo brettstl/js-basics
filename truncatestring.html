@@ -1,0 +1,23 @@
+<head></head>
+<body>
+<script type="text/javascript">
+
+// truncate a string, and add ... to the end
+function truncate(str, num) {
+	var strLeng = str.length;
+	if (strLeng > num) {
+		var numShort = num - 3;
+		var strSlice = str.slice(0, numShort);
+		str = strSlice + "...";
+		return str;
+	}
+	else {
+		return str;
+	}	
+}
+
+truncate('A-tisket a-tasket A green and yellow basket', 11);
+
+</script>
+</body>
+</html>
