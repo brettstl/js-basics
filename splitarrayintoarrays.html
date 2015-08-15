@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+
+
+// a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.
+// create a new small array 
+// determine if a small array is full
+// if needs entries, add the next array from arr to the small array
+// if full, add that small array to the new big array, and start a new small array
+function chunk(arr, size) {
+	var bigArr = [];
+	var smallArray = [];
+	for (i = 0; i < arr.length; i++) {
+		if (smallArray.length < size) {
+			smallArray.push(arr[i]);
+		}
+		else {
+			bigArr.push(smallArray);
+			smallArray = [];
+			smallArray.push(arr[i]);
+		}
+	}
+	bigArr.push(smallArray);
+	console.log(bigArr);
+	arr = bigArr;
+	return arr;
+}
+
+chunk(['a', 'b', 'c', 'd'], 2);
+
+
+</script>
+</body>
+</html>
