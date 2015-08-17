@@ -1,0 +1,32 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+
+//Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array
+
+function mutation(arr) {
+	arr[1] = arr[1].toLowerCase();
+	arr[0] = arr[0].toLowerCase();
+	var tester;
+	for (i = 0; i < arr[1].length; i++) {
+		tester = 0;
+		for (j = 0; j < arr[0].length; j++) {
+			if (arr[1][i] === arr[0][j]) {
+				tester = 1;
+			}
+		}
+		if (tester === 0) {
+			//console.log("false");
+			return false;
+		}
+	}
+	//console.log("true");
+	return true;
+}
+
+mutation(['hello', 'hey']);
+
+</script>
+</body>
+</html>
