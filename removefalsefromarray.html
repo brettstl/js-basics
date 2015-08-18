@@ -1,0 +1,43 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+// Remove all falsey values from an array.
+//Falsey values in javascript are false, null, 0, "", undefined, and NaN.
+
+
+function bounceOut(value) {
+	switch (value) {
+		case false:
+			return false
+			break;
+		case undefined:
+			return false
+			break;
+		case null:
+			return false
+			break;
+		case 0:
+			return false
+			break;
+		case "":
+			return false
+			break;
+		case NaN:
+			return false
+			break;
+		default:
+			return true
+	}
+}
+function bouncer(arr) {
+ 	arr = arr.filter(bounceOut);
+ 	//console.log(arr);
+	return arr;
+}
+
+bouncer([7, 'ate', '', false, 9]);
+
+</script>
+</body>
+</html>
