@@ -1,0 +1,44 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+
+	<script type="text/javascript">
+	//You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+	//Remember to use Read-Search-Ask if you get stuck. Write your own code.
+	//Here are some helpful links:
+	//Argument object https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+	//Array filter https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+	function destroyer(arr) {
+  		var args = Array.prototype.slice.call(arguments);
+  		function arrTester(vals) {
+  			for (l = 1; l < args.length; l++) {
+  				if (Array.isArray(args[l])) {
+  					for (k = 0; k < args[l].length; k++) {  						
+  						if (vals === args[l][k]) {
+  							return false
+  						}
+  					}	
+  				}
+  				else {
+  					if (vals === args[l]) {
+  						return false
+  					}		
+  				}	
+  			}
+  			return vals 
+  		}
+  		arr = arguments[0].filter(arrTester);
+  		console.log(arr);
+  		return arr;
+  	}
+
+  	destroyer([1, 2, 3, 1, 2, 3], 2, 3, [0, 9]);
+
+  </script>
+
+</body>
+</html>
