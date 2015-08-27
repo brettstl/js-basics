@@ -1,0 +1,35 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+		//We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.
+		//The lowest number will not always come first.
+		//Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+		//Here are some helpful links:
+			//Math.max()
+			//Math.min()
+			//Array.reduce()
+
+		function sumAll(arr) {
+			var smallest = Math.min(arr[0], arr[1]);
+			var bigest = Math.max(arr[0], arr[1]);
+			var theTotal = bigest;
+			console.log(smallest);
+			console.log(bigest);
+			while (bigest > smallest) {
+				bigest = bigest - 1;
+				theTotal = theTotal + bigest;
+			}
+			console.log(theTotal);
+			return theTotal;
+		}
+
+		sumAll([2, 4]);
+		</script>
+
+	</body>
+	</html>
