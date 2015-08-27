@@ -1,0 +1,43 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+
+	<script type="text/javascript">
+		// Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).
+		//Remember to use Read-Search-Ask if you get stuck. Write your own code.
+		//Here are some helpful links:
+			//Global Object
+			//Object.hasOwnProperty()
+			//Object.keys()	
+
+		function where(collection, source) {
+			var sourceValue; 
+			var sourceKey;
+			for (var property in source) {
+				sourceValue = source[property];
+				sourceKey = property;
+			}
+			var arr = [];
+			for (i = 0; i < collection.length; i++) {
+				if (collection[i].hasOwnProperty(sourceKey)) {
+			 		if (collection[i][sourceKey] === sourceValue) {
+						//console.log(collection[i].last);
+						arr.push(collection[i]);
+					}
+				}
+				
+			}
+			//console.log(arr);		
+  			return arr;
+  		}
+
+  		where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });
+
+  		</script>
+
+  	</body>
+  	</html>
