@@ -1,0 +1,54 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	//Compare two arrays and return a new array with any items not found in both of the original arrays.
+	//Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+	//Here are some helpful links:
+	//Comparison Operators
+		//Array.slice()
+		//Array.filter()
+		//Array.indexOf()
+		//Array.concat()
+		function diff(arr1, arr2) {
+			var newArr;
+			function reviewArr1 (val) {
+				var positive = arr1.indexOf(val);
+				//console.log(positive);
+				if (positive > -1 ) {
+					return false;
+				}
+				else {
+					return true;
+				}
+			}
+			function reviewArr2 (val) {
+				var positive = arr2.indexOf(val);
+				//console.log(positive);
+				if (positive > -1 ) {
+					return false;
+				}
+				else {
+					return true;
+				}
+			}
+			var tempArr2 = arr2.filter(reviewArr1);
+			var tempArr1 = arr1.filter(reviewArr2);
+			//console.log(tempArr1);
+			//console.log(tempArr2);
+			newArr = tempArr2.concat(tempArr1);
+  			console.log(newArr);
+  			return newArr;
+  		}
+
+  		diff([1, 2, 3, 5, 7], [1, 2, 3, 4, 5]);
+
+  	</script>
+
+
+  </body>
+  </html>
