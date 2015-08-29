@@ -1,0 +1,47 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	//Perform a search and replace on the sentence using the arguments provided and return the new sentence.
+	//First argument is the sentence to perform the search and replace on.
+	//Second argument is the word that you will be replacing (before).
+	//Third argument is what you will be replacing the second argument with (after).
+	//NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'
+	//Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+	//Here are some helpful links:
+	//Array.splice()
+	//String.replace()
+	//Array.join()
+	function replace(str, before, after) {
+		var res = str.split(" ");
+		for (i = 0; i < res.length; i++) {
+			if (before === res[i]) {
+				var myTemp = res[i];
+				if (myTemp[0] === myTemp[0].toUpperCase()) {
+					myLetter = after[0].toUpperCase();
+					var arrAfter = after.split("");
+					arrAfter[0] = myLetter;
+					after = arrAfter.join('');
+				}
+				else {
+					after[0].toLowerCase();
+					myLetter = after[0].toLowerCase();
+					var arrAfter = after.split("");
+					arrAfter[0] = myLetter;
+					after = arrAfter.join('');
+				}
+				res.splice(i, 1, after);
+				str = res.join(' ');
+			}
+		}
+		console.log(str);
+		return str;
+	}
+	replace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+</script>
+</body>
+</html>
