@@ -1,0 +1,40 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	//Convert the given number into a roman numeral.
+	//All roman numerals answers should be provided in upper-case.
+	//Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+	//Here are some helpful links:
+		//Array.slice()
+		//Array.filter()
+		//Array.indexOf()
+		//Array.concat()
+		function convert(num) {
+			var romanNum = "";
+			var tenArr = [" ", "X", "XX", "XXX"];
+			var singArr = [" ", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+			if (num > 10) {
+				var n = num.toString();
+				var tensDig = n[0];
+				Number(tensDig);
+				romanNum = tenArr[tensDig];
+				var singleDig = n[1];
+				Number(singleDig);
+				romanNum = romanNum + singArr[singleDig];
+				console.log(romanNum);
+			}
+			else {
+				romanNum = singArr[num];
+				console.log(romanNum);
+			}
+			return romanNum;
+		}
+		convert(38);
+	</script>
+</body>
+</html>
