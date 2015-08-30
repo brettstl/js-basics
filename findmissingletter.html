@@ -1,0 +1,39 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	//Find the missing letter in the passed letter range and return it.
+	//If all letters are present in the range, return undefined.
+	//Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+	//Here are some helpful links:
+		//String.charCodeAt() // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+		//String.fromCharCode() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+
+		function fearNotLetter(str) {
+			for (i = 1; i < str.length; i ++) {
+				var myValue = str.charCodeAt(i); // the unicode number for the letter
+				var preValue = str.charCodeAt(i - 1);
+				if (myValue === (preValue + 1)) {
+					//console.log(str[i] + " is after " + str[(i - 1)]);
+				}
+				else {
+					//console.log(str[i] + " is not after " + str[i - 1]);
+					myValue = myValue - 1;
+					str = String.fromCharCode(myValue);
+					return str;
+				}
+			}
+			// if no letter is missing
+			return undefined;
+		}
+
+		console.log(fearNotLetter('abce'));
+	</script>
+
+
+</body>
+</html>
