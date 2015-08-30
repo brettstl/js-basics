@@ -1,0 +1,52 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	//Translate the provided string to pig latin.
+	//Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
+	//If a word begins with a vowel you just add "way" to the end.
+	//Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+	//Here are some helpful links:
+		//Array.indexOf()
+		//Array.push()
+		//Array.join()
+		//String.substr()
+		//String.split()
+
+		function translate(str) {
+			strArr = str.split('');
+			//console.log(strArr[0]);
+
+			var myRegex = /[aeiou]/g;
+			if (myRegex.test(strArr[0])) {
+				strArr = strArr.concat("w", "a", "y");
+			}
+			else {
+				//console.log("consonant")
+				if (myRegex.test(strArr[1])) {
+					strArr.push(strArr[0]);
+					strArr = strArr.concat("a", "y");
+					strArr.splice(0, 1);
+				}
+				else {
+					strArr.push(strArr[0], strArr[1]);
+					strArr = strArr.concat("a", "y");
+					strArr.splice(0, 2);
+				}
+			}
+			str = strArr.join('');
+			//console.log(str);
+			return str;
+		}
+
+		translate("glove");
+
+	</script>
+
+
+</body>
+</html>
