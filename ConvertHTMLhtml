@@ -1,0 +1,36 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// Convert HTML Entities: Convert the characters "&", "<", ">", '"' (double quote), and "'" (apostrophe), in a string to their corresponding HTML entities.
+		// RegExp https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+		// HTML Entries: http://dev.w3.org/html5/html-author/charref
+
+		var htmlArr = [['&', '&amp;'], ['<', '&lt;'], ['>', '&gt;'], ['"','&quot;'], ["'", '&apos;']];
+		function convert(str) {
+			var myArr = str.split('');
+			for (i = 0; i < myArr.length; i++) {
+				//console.log(myArr[i]);
+				for (k = 0; k < htmlArr.length; k++) {
+					if (myArr[i] === htmlArr[k][0]) {
+						myArr[i] = htmlArr[k][1];
+					}
+				}
+			}
+			//console.log(myArr);
+			str = myArr.join('');
+			//console.log(str);
+			return str;
+		}
+
+		convert('Dolce & Gabbana');
+
+	</script>
+
+
+</body>
+</html>
