@@ -1,0 +1,39 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// spinal-case-converter: Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+		// RegExp
+		// String.replace()
+
+		function spinalCase(str) {
+			pattCap = /[A-Z]/;
+			pattAlph = /[a-z]/; 
+			str = str.split('');
+			for (i = 1; i < str.length; i++) {
+				if (pattCap.test(str[i])) {
+					var last = i - 1;
+					if (pattAlph.test(str[last])) {
+						str.splice(i, 0, " ");
+						i++;
+					}
+				}
+			}
+			str = str.join('');
+			str = str.replace(/[A-Z]/g, function myFunction(x){return x.toLowerCase();});
+			str = str.replace(/_/g,'-');
+			str = str.replace(/\s/g,'-');
+			console.log(str);
+			return str;
+		}
+
+		spinalCase('TheAndyGriffithShow');
+
+	</script>
+
+</body>
+</html>
