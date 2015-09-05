@@ -1,0 +1,54 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// Find the smallest number that is evenly divisible by all numbers in the provided range.
+	//In other words, given the range [3,7], you will need to find the least common multiple of 3, 4, 5, 6, and 7.
+	//The range will be an array of two numbers that will not necessarily be in numerical order.
+		// Least common multiples https://www.mathsisfun.com/least-common-multiple.html
+
+
+		// check each number to see if returnNUm a multiple for each value
+		function remainderCheck(values, returnNum) {
+			for (i = 0; i < values.length; i++) {
+				if ((returnNum % values[i]) > 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		function smallestCommons(arr) {
+			// sort numbers, so the last is the highest
+			arr = arr.sort(function(a, b){return a-b}); 
+			var returnNum = arr[arr.length - 1];
+			
+			// find each number (value)
+			var values = [];
+			for (i = arr[0]; i < (arr[1] + 1); i++) {
+				values.push(i);
+			}
+
+			// check to see if returnNum is the smallest evenly divisible
+			while (!remainderCheck(values, returnNum)) {
+				returnNum++;
+			}
+
+			//console.log(returnNum + " is the return");
+			return returnNum;
+		}
+
+		smallestCommons([1,5]); //should be 60
+		smallestCommons([5, 1]); //should be 60
+		smallestCommons([1,13]); // should be 360360
+
+
+
+	</script>
+
+</body>
+</html>
