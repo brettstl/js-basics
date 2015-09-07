@@ -1,0 +1,44 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// DNA Pairing: The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+	// Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+	// Return the provided character as the first element in each array.
+
+	function pair(str) {
+		str = str.split("");
+		var DNApair;
+		//console.log(str);
+		arr = str.map(function(currentValue){
+			if(currentValue === "A"){
+				DNApair = "T";
+			}
+			else if(currentValue === "T"){
+				DNApair = "A";
+			} 
+			else if(currentValue === "G"){
+				DNApair = "C";
+			} 
+			else{
+				DNApair = "G";
+			} 
+			return [currentValue, DNApair]});
+		console.log(arr);
+		return arr;
+	}
+
+	//pair("GCG");
+	pair("ATCGA"); //[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']]
+	//pair("TTGAG"); //[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']]
+	//pair("CTCTA"); //[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']]
+
+
+</script>
+
+</body>
+</html>
