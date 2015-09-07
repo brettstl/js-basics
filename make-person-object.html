@@ -1,0 +1,54 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// Make a Person: Fill in the object constructor with the methods specified in the tests.
+	//Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).
+	//All functions that take an argument have an arity of 1, and the argument will be a string.
+	//These methods must be the only available means for interacting with the object.
+		// closures https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+		// Object model https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+
+		function Person(firstAndLast) {
+			var arr = firstAndLast.split(" ");
+			//console.log(firstAndLast);
+			//console.log(arr);
+			var fullName = firstAndLast;
+			var firstName = arr[0];
+			var lastName = arr[1];
+			this.getFullName = function () {
+				var funcName = fullName;
+				return funcName
+			}
+			this.getFirstName = function () {
+				var funcName = firstName;
+				return funcName			
+			}
+			this.getLastName = function () {
+				var funcName = lastName;
+				return funcName			
+			}
+			this.setFirstName = function (firstAndLast) {
+				firstName = firstAndLast;
+			}
+			this.setLastName = function (firstAndLast) {
+				lastName = firstAndLast;
+			}
+			this.setFullName = function (firstAndLast) {
+				fullName = firstAndLast;
+			}
+		}
+
+		var bob = new Person('Bob Ross');
+		bob.getFullName();
+		//bob.getLastName();
+		//console.log(bob.getFullName());
+
+	</script>
+
+</body>
+</html>
