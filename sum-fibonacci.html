@@ -1,0 +1,60 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.
+	// The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.
+	// As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3.
+		// remainder https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_(.25)
+		function fibs(myNum, lastNum) {
+			var newNum = myNum + lastNum;
+			return newNum
+		}
+		function sumFibs(num) {
+			var myNum = 1;
+			var lastNum = 0;
+			var myFib = [0, 1];
+			while (myNum < num) {
+				var holdNum = myNum;
+				var myNum = fibs(myNum, lastNum);
+				myFib.push(myNum);
+				lastNum = holdNum;
+				if (myNum >= num) {
+					if (myNum === num) {
+						myFib.splice((myFib.length), 1);
+					}
+					else {
+						myFib.splice((myFib.length - 1), 1);
+					}
+					for (i = 0; i < myFib.length; i++) {
+						if (myFib[i] % 2 == 0) {
+							myFib[i] = 0;
+						}
+					}
+					myFib = myFib.reduce(function(previousValue, currentValue, index, array) {
+						return previousValue + currentValue;
+					});				 
+				}
+			}
+			if (typeof myFib != "number") {
+				myFib = 1;
+			}
+			return myFib
+		}
+
+		sumFibs(4); // expected to equal 5
+		sumFibs(1000); // expected to equal 1785
+		sumFibs(75024); // expected to equal 60696
+		sumFibs(1); // expected to be a number
+		sumFibs(75025); // to.equal 135721
+
+		
+
+	</script>
+
+</body>
+</html>
