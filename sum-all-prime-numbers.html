@@ -1,0 +1,49 @@
+<html>
+<head>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+</head>
+<body>
+	<script type="text/javascript">
+	// Sum all the prime numbers up to and including the provided number.
+	// A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.
+	// The provided number may not be a prime.
+		// for loops
+		// array.push()
+
+		function sumPrimes(num) {
+			var subArr = [2];
+			for (i = 3; i <= num; i++) {
+				var primeTest = true;
+				if (i % 2 != 0) {
+					for (k = 3; k < num; k++) {
+						if (i > k) {
+							if (i % k == 0) {
+								primeTest = false;
+							}
+						}
+					}
+				}
+				else {
+					primeTest = false;
+				}
+				if (primeTest) {
+					subArr.push(i);
+				}
+			}
+			num = 0;
+			for (j = 0; j < subArr.length; j++) {
+				num += subArr[j];
+			}
+			console.log(num);
+			return num;
+		}
+
+		sumPrimes(10); // equal 17
+		sumPrimes(977); // equal 73156
+
+	</script>
+
+</body>
+</html>
